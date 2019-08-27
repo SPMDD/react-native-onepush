@@ -1,0 +1,57 @@
+apply plugin: 'com.android.library'
+apply from: project(':react-native-config').projectDir.getPath() + "/dotenv.gradle"
+
+android {
+    compileSdkVersion rootProject.ext.compileSdkVersion
+    buildToolsVersion rootProject.ext.buildToolsVersion
+
+    defaultConfig {
+        minSdkVersion rootProject.ext.minSdkVersion
+        targetSdkVersion rootProject.ext.targetSdkVersion
+//        ndk {
+//            //选择要添加的对应 cpu 类型的 .so 库。
+//            abiFilters 'armeabi-v7a', 'x86'
+//            // 还可以添加 'x86', 'x86_64', 'mips', 'mips64'
+//        }
+        resConfigs "en", "zh-rCN"
+    }
+    buildTypes {
+        debug {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+        release {
+            minifyEnabled rootProject.ext.enableProguardInReleaseBuilds
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+    sourceSets {
+        main {
+            jniLibs.srcDirs = ['libs']
+        }
+    }
+    repositories{
+        flatDir {
+            dirs 'libs'
+        }
+    }
+}
+dependencies {
+    compile 'com.android.support:appcompat-v7:24.2.1'
+    compile 'com.facebook.react:react-native:+'
+    compile 'com.google.code.gson:gson:2.2.4'
+    compile 'com.huawei.android.hms:push:2.6.3.301'
+    compile 'com.yanzhenjie:permission:2.0.0-rc3'
+    compile 'org.greenrobot:eventbus:3.1.1'
+    compile 'com.lzy.net:okgo:3.0.4'
+    provided files('libs/commonUtils_1.2.jar')
+    compile (name:'one-push-core-release', ext:'aar')
+    compile (name:'one-push-huawei-release', ext:'aar')
+    compile (name:'one-push-jpush-release', ext:'aar')
+    compile (name:'one-push-xiaomi-release', ext:'aar')
+//    compile project(':one-push-core')
+//    compile project(':one-push-huawei')
+//    compile project(':one-push-jpush')
+//    compile project(':one-push-xiaomi')
+
+}

@@ -1,0 +1,142 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.sinooceangroup.onepush">
+
+
+
+    <!--for Samsung-->
+    <uses-permission android:name="com.sec.android.provider.badge.permission.READ" />
+    <uses-permission android:name="com.sec.android.provider.badge.permission.WRITE" />
+
+    <!--for htc-->
+    <uses-permission android:name="com.htc.launcher.permission.READ_SETTINGS" />
+    <uses-permission android:name="com.htc.launcher.permission.UPDATE_SHORTCUT" />
+
+    <!--for sony-->
+    <uses-permission android:name="com.sonyericsson.home.permission.BROADCAST_BADGE" />
+    <uses-permission android:name="com.sonymobile.home.permission.PROVIDER_INSERT_BADGE" />
+
+    <!--for apex-->
+    <uses-permission android:name="com.anddoes.launcher.permission.UPDATE_COUNT" />
+
+    <!--for solid-->
+    <uses-permission android:name="com.majeur.launcher.permission.UPDATE_BADGE" />
+
+    <!--for huawei-->
+    <uses-permission android:name="com.huawei.android.launcher.permission.CHANGE_BADGE" />
+    <uses-permission android:name="com.huawei.android.launcher.permission.READ_SETTINGS" />
+    <uses-permission android:name="com.huawei.android.launcher.permission.WRITE_SETTINGS" />
+
+    <!--for ZUK-->
+    <uses-permission android:name="android.permission.READ_APP_BADGE" />
+
+    <!--for OPPO-->
+    <uses-permission android:name="com.oppo.launcher.permission.READ_SETTINGS" />
+    <uses-permission android:name="com.oppo.launcher.permission.WRITE_SETTINGS" />
+
+    <!--for EvMe-->
+    <uses-permission android:name="me.everything.badger.permission.BADGE_COUNT_READ" />
+    <uses-permission android:name="me.everything.badger.permission.BADGE_COUNT_WRITE" />
+
+    <application
+        android:label="@string/app_name"
+        android:supportsRtl="true">
+        <!--********************************OnePush各家推送的appid注册地方*******************start*******************-->
+        <!--&lt;!&ndash;友盟推送静态注册&ndash;&gt;-->
+        <!--<meta-data-->
+            <!--android:name="UMENG_APPKEY"-->
+            <!--android:value="59c87440734be47b6700001b"/>-->
+
+        <!--<meta-data-->
+            <!--android:name="UMENG_MESSAGE_SECRET"-->
+            <!--android:value="b856987f2ca836a784698e150d36ff2a"/>-->
+
+        <!--小米推送静态注册-->
+        <meta-data
+            android:name="MI_PUSH_APP_ID"
+            android:value="@string/XiaomiAppID"/>
+
+        <meta-data
+            android:name="MI_PUSH_APP_KEY"
+            android:value="@string/XiaomiAppKey"/>
+
+        <!--个推推送静态注册-->
+        <!--<meta-data-->
+            <!--android:name="PUSH_APPID"-->
+            <!--android:value="edX56uUoQ7ASr4ru4c3rVA"/>-->
+        <!--<meta-data-->
+            <!--android:name="PUSH_APPKEY"-->
+            <!--android:value="Crl1UEA5Fd8tooEDmS5aA3"/>-->
+        <!--<meta-data-->
+            <!--android:name="PUSH_APPSECRET"-->
+            <!--android:value="D9hcD0r6Ec5ANGSLY92XP3"/>-->
+
+        <!--魅族推送静态注册-->
+        <!--<meta-data-->
+            <!--android:name="MEIZU_PUSH_APP_ID"-->
+            <!--android:value="111338"/>-->
+
+        <!--<meta-data-->
+            <!--android:name="MEIZU_PUSH_APP_KEY"-->
+            <!--android:value="db1659369a85459abe5384814123ab5a"/>-->
+
+        <!--极光推送静态注册-->
+        <meta-data
+            android:name="JPUSH_CHANNEL"
+            android:value="developer"/>
+        <meta-data
+            android:name="JPUSH_APPKEY"
+            android:value="@string/JPush_AppKey"/>
+
+        <!--华为HMS推送静态注册-->
+        <meta-data
+            android:name="com.huawei.hms.client.appid"
+            android:value="@string/HuaweiAppID"/>
+
+        <!--华为老版本推送不需要静态注册-->
+
+        <!--********************************OnePush各家推送的appid注册地方****************end**********************-->
+
+        <!--如果引入了one-push-xiaomi库-->
+        <meta-data
+            android:name="OnePush_XiaoMi_101"
+            android:value="com.peng.one.push.xiaomi.XiaomiPushClient"/>
+
+        <!--如果引入了one-push-meizu库-->
+        <!--<meta-data-->
+            <!--android:name="OnePush_MeiZu_103"-->
+            <!--android:value="com.peng.one.push.meizu.MeizuPushClient"/>-->
+
+        <!--如果引入了one-push-umeng类库-->
+        <!--<meta-data-->
+            <!--android:name="OnePush_UMENG_104"-->
+            <!--android:value="com.peng.one.push.umeng.UMengPushClient"/>-->
+
+        <!--如果引入了one-push-getui库-->
+        <!--<meta-data-->
+            <!--android:name="OnePush_GeTui_105"-->
+            <!--android:value="com.peng.one.push.getui.GeTuiPushClient"/>-->
+
+        <!--如果引入了one-push-getui库-->
+        <meta-data
+            android:name="OnePush_JPush_106"
+            android:value="com.peng.one.push.jpush.JPushClient"/>
+        <!--如果引入了one-push-huawei库-->
+        <meta-data
+            android:name="OnePush_HuaWei_108"
+            android:value="com.peng.one.push.huawei.hmsagents.HMSPushClient"/>
+
+
+        <receiver android:name="com.sinooceangroup.onepush.OnePushReceiver">
+            <intent-filter>
+                <action android:name="com.peng.one.push.ACTION_RECEIVE_NOTIFICATION"/>
+                <action android:name="com.peng.one.push.ACTION_RECEIVE_NOTIFICATION_CLICK"/>
+                <action android:name="com.peng.one.push.ACTION_RECEIVE_MESSAGE"/>
+                <action android:name="com.peng.one.push.ACTION_RECEIVE_COMMAND_RESULT"/>
+
+                <category android:name="${applicationId}" />
+            </intent-filter>
+        </receiver>
+
+    </application>
+
+</manifest>

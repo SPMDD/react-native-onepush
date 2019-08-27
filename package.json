@@ -1,0 +1,39 @@
+{
+  "_from": "git+http://alm-tfs.sinooceangroup.com:8080/tfs/YXPlatform/_git/react-native-onepush",
+  "_id": "react-native-onepush@2.2.0",
+  "_inBundle": false,
+  "_integrity": "sha1-bRjRFTqsB6lssULikbNq+pmpmBU=",
+  "_location": "/react-native-onepush",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "git",
+    "raw": "react-native-onepush@git+http://alm-tfs.sinooceangroup.com:8080/tfs/YXPlatform/_git/react-native-onepush",
+    "name": "react-native-onepush",
+    "escapedName": "react-native-onepush",
+    "rawSpec": "git+http://alm-tfs.sinooceangroup.com:8080/tfs/YXPlatform/_git/react-native-onepush",
+    "saveSpec": "git+http://alm-tfs.sinooceangroup.com:8080/tfs/YXPlatform/_git/react-native-onepush",
+    "fetchSpec": "http://alm-tfs.sinooceangroup.com:8080/tfs/YXPlatform/_git/react-native-onepush",
+    "gitCommittish": "master"
+  },
+  "_requiredBy": [
+    "/"
+  ],
+  "_resolved": "git+http://alm-tfs.sinooceangroup.com:8080/tfs/YXPlatform/_git/react-native-onepush#9f79e59f8d1a8387a62a3dd3bdcba97230352f16",
+  "_spec": "react-native-onepush@git+http://alm-tfs.sinooceangroup.com:8080/tfs/YXPlatform/_git/react-native-onepush",
+  "_where": "/Users/apple/Documents/NewOfficeApp",
+  "author": "",
+  "bundleDependencies": false,
+  "deprecated": false,
+  "description": "### 总体介绍",
+  "license": "ISC",
+  "main": "index.js",
+  "name": "react-native-onepush",
+  "repository": {
+    "type": "git",
+    "url": "http://yxsource.sinooceanland.net/platform/react-native-onepush.git"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "version": "2.2.0"
+}
